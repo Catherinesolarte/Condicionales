@@ -1,0 +1,264 @@
+/*  Reseteo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Fondo General de la Página*/
+body {
+  background-color: #2e2e2e; /* Gris oscuro para el fondo */
+  color: #ffffff; /* Texto blanco por defecto */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado de la Página*/
+.site-header {
+  background-color: #1c1c1c; /* Negro para el encabezado */
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.js-logo {
+  width: 70px; /*Tamaño */
+  height: 50px;
+}
+
+.site-header h1 {
+  color: #f1c40f; /* Amarillo dorado para resaltar el título */
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* Caja Fuerte */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.parte-3 {
+  background-color: #000000;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  max-width: 400px;
+  width: 100%;
+  border: 4px solid #444444; /* Borde metálico */
+  position: relative;
+}
+
+/* Efectos de textura metálica */
+.parte-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.05) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+/* Título de la Sección */
+.parte-3 h3 {
+  color: #f1c40f; /* Amarillo dorado para resaltar el título */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para el Formulario */
+.password {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+select {
+  padding: 0.5rem;
+  border: 2px solid #555555; /* Borde oscuro */
+  border-radius: 5px;
+  background-color: #1c1c1c; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  font-size: 1rem;
+  appearance: none; /* Quitar estilos por defecto */
+  transition: border-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #f1c40f; /* Borde amarillo al enfocar */
+  outline: none;
+}
+
+/* Botón de Ingreso */
+button#btn-ingresar {
+  width: 100%;
+  padding: 0.7rem 0;
+  font-size: 1.1rem;
+  background-color: #f39c12; /* Naranja para resaltar */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+button#btn-ingresar:hover {
+  background-color: #d35400; /* Naranja oscuro al pasar el mouse */
+}
+
+/* Mensaje de Resultado */
+#txt-password {
+  margin-top: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #1c1c1c; /* Negro para el pie de página */
+  color: #fdd005; /* Texto gris claro */
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+}
+
+/*Animaciones y Efectos*/
+/* Animación de sacudida */
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateX(8px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  90% {
+    transform: translateX(-5px);
+  }
+}
+
+.shake {
+  animation: shake-horizontal 0.8s ease-out;
+  border: 2px solid #e74c3c; /* Borde rojo para indicar error */
+}
+
+/* Placeholder para select */
+select::placeholder {
+  color: #ff0000;
+  opacity: 1;
+}
+
+/*Accesibilidad*/
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Media queries pantallas móviles */
+@media only screen and (max-width: 600px) {
+  img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  #sticker-logo {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  button {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+
+/* Media queries tabletas */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  img {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  #sticker-logo {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  button {
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+}
+
+/* Media queries escritorio */
+@media only screen and (min-width: 1025px) {
+  img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  #sticker-logo {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  button {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 2.5rem;
+  }
+}
